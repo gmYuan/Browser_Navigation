@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>小巧的导航页面</title>
+</head>
+
+<body>
+    <header></header>
+    <main >
+        <div id="mainxx"></div>
+    </main>
+    <footer></footer>
+
+    <script>
+        var keys = {
+            '0': ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            '1': ['a','s','d','f','g','h','j','k','l'],
+            '2': ['z','x','c','v','b','n','m'],
+            'length' : 3
+        }
+        var hash ={
+            'q': 'qq.com',
+            'w': 'weibo.com',
+            'e': 'ele.me',
+            'r': 'renren.com',
+            't': 'tianya.com',
+            'y': 'youtube.com',
+            'u': 'uc.com',
+            'i': 'iqiyi.com',
+            'o': 'opera.com',
+            'p':  undefined,
+            'a': 'acfun.tv',
+            's': 'sohu.com',
+            'z': 'zhihu.com',
+            'm': 'meituan.com'
+        }
+
+        index = 0;
+        while (index < keys['length']){
+            divxx = document.createElement('div');
+            mainxx.appendChild(divxx);
+
+            index2 = 0;
+            row = keys[index];
+            // console.log(row);
+            while (index2 < row.length){
+                kbdxx = document.createElement('kbd');
+                kbdxx.textContent = row[index2];
+                divxx.appendChild(kbdxx);
+                index2 = index2 + 1;
+            }
+            index = index + 1;
+        }
+    </script>
+</body>
+
+</html>

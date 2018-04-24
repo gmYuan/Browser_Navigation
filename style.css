@@ -1,0 +1,33 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+kbd{
+    border: 1px solid red;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    text-transform: uppercase;
+}
+
+main{
+    text-align: center;
+}
+
+#mainxx{
+    display: inline-block;
+}
+
+#mainxx > div:nth-child(2){
+    margin-left: 1em;
+}
+
+#mainxx > div:nth-child(3){
+    margin-left: 2em;
+}
