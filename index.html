@@ -40,6 +40,11 @@
             'm': 'meituan.com'
         }
 
+        var hashInLocalStorage = JSON.parse(localStorage.getItem('copy') || 'null');
+        if (hashInLocalStorage){
+            hash = hashInLocalStorage;
+        }
+        
         index = 0;
         while (index < keys['length']){
             divxx = document.createElement('div');
@@ -62,7 +67,8 @@
                     key = e.target.id;
                     userinput = prompt('给我一个网址');
                     // console.log(userinput);
-                    hash[key] = userinput;
+                    hash[key] = userinput;       //变更哈希了
+                    localStorage.setItem('copy', JSON.stringify(hash));
                 }
 
                 kbdxx.appendChild(buttonX);
