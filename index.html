@@ -51,11 +51,36 @@
             while (index2 < row.length){
                 kbdxx = document.createElement('kbd');
                 kbdxx.textContent = row[index2];
+
+                buttonX = document.createElement('button');
+                buttonX.textContent = '编辑';
+                buttonX.id = row[index2];
+
+                buttonX.onclick = function(e){
+                    // console.log(e);
+                    // console.log(e.target.id);
+                    key = e.target.id;
+                    userinput = prompt('给我一个网址');
+                    // console.log(userinput);
+                    hash[key] = userinput;
+                }
+
+                kbdxx.appendChild(buttonX);
                 divxx.appendChild(kbdxx);
                 index2 = index2 + 1;
             }
             index = index + 1;
         }
+
+        document.onkeypress = function(e){
+            // console.log(ygm['key'])
+            key = e['key'];
+            website = hash[key];
+            // location.href = 'http://' + website;
+            window.open('http://'+ website, '_blank');   
+        }
+
+
     </script>
 </body>
 
