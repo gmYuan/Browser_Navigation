@@ -15,7 +15,7 @@ var hash = {
     'u': 'uc.com',
     'i': 'iqiyi.com',
     'o': 'opera.com',
-    'p': undefined,
+    'p':  undefined,
     'a': 'acfun.tv',
     's': 'sohu.com',
     'z': 'zhihu.com',
@@ -38,8 +38,19 @@ while (index < keys['length']) {
     // console.log(row);
     while (index2 < row.length) {
         kbd = document.createElement('kbd');
-        kbd.textContent = row[index2];
         kbd.className = 'key';
+
+        span = document.createElement('span');  //给字母添加一个span和类名
+        span.textContent =  row[index2];
+        span.className = 'text';
+
+        img = document.createElement('img');     //给键盘添加对应网址的图标
+        if (hash[row[index2]]){
+            img.src = 'http://' + hash[row[index2]] + '/favicon.ico';
+        }else{
+            img.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png';
+        }
+       
 
         button = document.createElement('button');
         button.textContent = '编辑';
@@ -55,6 +66,8 @@ while (index < keys['length']) {
             localStorage.setItem('copy', JSON.stringify(hash));
         }
 
+        kbd.appendChild(span);
+        kbd.appendChild(img);
         kbd.appendChild(button);
         div.appendChild(kbd);
         index2 = index2 + 1;

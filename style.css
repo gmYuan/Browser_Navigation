@@ -18,6 +18,21 @@ kbd{
     position: relative;
 }
 
+/* span.text绝对定位 */
+kbd .text{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+kbd img{
+    position: absolute;
+    bottom: 1px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+}
+
 kbd button{
     position: absolute;
     right: 0;
@@ -29,12 +44,26 @@ kbd:hover > button{
     display: inline-block;
 }
 
+
+body{
+    background: grey url('./image/bg.jpg') no-repeat center center ;  /* 给页面增加背景图 */
+    background-size: cover;
+}
+
+
 main{
     text-align: center;
+    height: 100vh;        /* 占满全屏 */
+    display: flex;
+    justify-content: center;
+    align-items: center;    /* 让main在整个屏幕垂直居中 */
 }
 
 #main{
     display: inline-block;
+    background: rgba(255,255,255,0.2);  /* 背景色透明 */
+    border-radius: 10px;
+
 }
 
 #main > div:nth-child(2){
@@ -66,3 +95,4 @@ main{
 .row{
     margin: 20px;
 }
+
