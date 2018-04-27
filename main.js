@@ -50,6 +50,10 @@ while (index < keys['length']) {
         }else{
             img.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png';
         }
+
+        img.onerror = function(e){
+            e.target.src =  '//i.loli.net/2017/11/10/5a05afbc5e183.png'; 
+        }
        
 
         button = document.createElement('button');
@@ -59,10 +63,21 @@ while (index < keys['length']) {
         button.onclick = function (e) {
             // console.log(e);
             // console.log(e.target.id);
-            key = e.target.id;
+            button2 = e.target;
+            key = button2.id;
+
+            img2 = button2.previousSibling;
+
             userinput = prompt('给我一个网址');
             // console.log(userinput);
             hash[key] = userinput;       //变更哈希了
+
+            img2.src = 'http://'+ userinput + '/favicon.ico';
+            console.log(img2.src);
+            img2.onerror = function(e){
+                e.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png';
+            }
+
             localStorage.setItem('copy', JSON.stringify(hash));
         }
 
