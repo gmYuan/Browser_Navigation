@@ -1,80 +1,37 @@
 
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
-a {
+a{
     text-decoration: none;
 }
 
 kbd{
-    border: 1px solid red;
-    margin: 0 10px;
     display: inline-block;
-    width: 4em;
+    width: 4em;               /*  S5.S1 设置基本宽高; */
     height: 4em;
-    text-transform: uppercase;
+   
+    font-size: 16px;              /*  S5.S2 字体大小; */
+    border: 1px solid red;
+    text-transform: uppercase;     /*  S5.S3 字母大写; */
+
     position: relative;
 }
 
-/* span.text绝对定位 */
-kbd .text{
-    position: absolute;
-    top: 2px;
-    left: 2px;
-}
-
-kbd img{
-    position: absolute;
-    bottom: 1px;
-    left: 2px;
-    width: 14px;
-    height: 14px;
-}
-
 kbd button{
-    position: absolute;
+    position: absolute;    /*  S7.S2 设置按钮的位置和样式; */    
     right: 0;
-    bottom: 0; 
-    display: none;
+    bottom: 0;  
+    display: none;             
 }
 
-kbd:hover > button{
+kbd:hover button{       
     display: inline-block;
 }
 
-
-body{
-    background: grey url('./image/bg.jpg') no-repeat center center ;  /* 给页面增加背景图 */
-    background-size: cover;
-}
-
-
-main{
-    text-align: center;
-    height: 100vh;        /* 占满全屏 */
-    display: flex;
-    justify-content: center;
-    align-items: center;    /* 让main在整个屏幕垂直居中 */
-}
-
-#main{
-    display: inline-block;
-    background: rgba(255,255,255,0.2);  /* 背景色透明 */
-    border-radius: 10px;
-
-}
-
-#main > div:nth-child(2){
-    margin-left: 20px;
-}
-
-#main > div:nth-child(3){
-    margin-left: 40px;
-}
-
-.key{
+.key{                  /*  S9.S2 设置按钮的位置和样式; */              
     width: 50px;
     height: 40px;
     background: linear-gradient(0deg, #292929 0, #111111 100%);
@@ -96,3 +53,48 @@ main{
     margin: 20px;
 }
 
+.row .key{
+    margin: 0 10px;        
+}
+
+#main > div:nth-child(2){
+    margin-left: 20px;
+}
+
+#main > div:nth-child(3){
+    margin-left: 40px;
+}
+
+main{
+    text-align: center;
+    height: 100vh;        /* 占满全屏 */
+    display: flex;
+    justify-content: center;
+    align-items: center;    /* 让main在整个屏幕垂直居中 */
+}
+
+body{
+    background: grey url('./image/bg.jpg') no-repeat center center ;  /* 给页面增加背景图 */
+    background-size: cover;
+}
+
+#main{
+    display: inline-block;
+    background: rgba(255,255,255,0.2);  /* 背景色透明 */
+    border-radius: 10px;
+}
+
+.key img{                  /*  S12  设置文字和图片的位置和样式; */   
+    position: absolute;
+    bottom: 1px;
+    left: 2px;
+
+    width: 14px;
+    height: 14px;
+}
+
+kbd .text{
+    position: absolute;
+    top: 2px;
+    left: 3px;
+}
